@@ -1,5 +1,20 @@
 # Animation Visualizer
 
+## videos
+
+
+
+https://github.com/user-attachments/assets/f813c1fa-2d39-4953-bece-3fc8a6afb2de
+
+
+
+https://github.com/user-attachments/assets/699b7386-8ad2-4dd1-b70b-56487ac778bb
+
+
+https://github.com/user-attachments/assets/b155ae75-d5bc-41c9-835f-527b10e26642
+
+
+
 A modern web application that transforms text-based questions into interactive animated visualizations using AI-powered explanations and SVG animations.
 
 ## 🎯 Overview
