@@ -221,7 +221,87 @@ Send a question and receive AI-generated explanation with visualization data.
 3. **CORS Errors**: Make sure the backend CORS configuration includes your frontend URL
 4. **Animation Performance**: For complex animations, consider reducing particle count
 
+## 🚀 Deployment on Render
 
+### Backend Deployment (Web Service)
+
+1. **Create a new Web Service on Render**
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click "New +" → "Web Service"
+   - Connect your GitHub repository
+
+2. **Configure the Backend Service**
+   ```
+   Name: animation-visualizer-backend
+   Environment: Node
+   Build Command: npm install
+   Start Command: npm start
+   ```
+
+3. **Set Environment Variables**
+   - `GOOGLE_API_KEY`: Your Google Generative AI API key
+   - `NODE_ENV`: production
+   - `PORT`: (leave empty, Render sets this automatically)
+
+4. **Deploy Settings**
+   - Root Directory: `backend`
+   - Node Version: 18 or higher
+   - Auto-Deploy: Yes
+
+### Frontend Deployment (Static Site)
+
+1. **Create a new Static Site on Render**
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click "New +" → "Static Site"
+   - Connect your GitHub repository
+
+2. **Configure the Frontend Service**
+   ```
+   Name: animation-visualizer-frontend
+   Build Command: npm run build
+   Publish Directory: build
+   ```
+
+3. **Set Environment Variables**
+   - `REACT_APP_API_URL`: https://your-backend-url.onrender.com/api
+
+4. **Deploy Settings**
+   - Root Directory: `frontend`
+   - Node Version: 18 or higher
+   - Auto-Deploy: Yes
+
+### Quick Deployment Commands
+
+**Prepare for deployment:**
+```bash
+# Commit your changes
+git add .
+git commit -m "Prepare for Render deployment"
+git push origin main
+```
+
+**Environment Variables Needed:**
+- Backend: `GOOGLE_API_KEY`
+- Frontend: `REACT_APP_API_URL`
+
+### Post-Deployment Steps
+
+1. **Update CORS Configuration**
+   - Add your frontend URL to the CORS configuration in the backend
+   - Update any hardcoded localhost URLs
+
+2. **Test the Deployment**
+   - Visit your frontend URL
+   - Test the chat functionality
+   - Verify animations are working
+
+3. **Monitor Logs**
+   - Check Render logs for any deployment issues
+   - Monitor API response times and errors
+
+### Deployment URLs
+- Frontend: `https://your-frontend-name.onrender.com`
+- Backend API: `https://your-backend-name.onrender.com/api`
 
 ## 🙏 Acknowledgments
 
