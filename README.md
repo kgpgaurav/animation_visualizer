@@ -90,7 +90,7 @@ animation_visualizer/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/animation_visualizer.git
+   git clone https://github.com/kgpgaurav/animation_visualizer.git
    cd animation_visualizer
    ```
 
@@ -131,8 +131,8 @@ animation_visualizer/
    ```
 
 3. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
+   - Frontend: http://localhost:3000 (https://animation-visualizer-gjw0.onrender.com)
+   - Backend API: http://localhost:5000 (https://animation-visualizer.onrender.com)
 
 ## 🎮 Usage
 
