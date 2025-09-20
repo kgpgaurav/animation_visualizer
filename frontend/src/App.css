@@ -1,0 +1,29 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+.visualization-section {
+  flex: 1;
+  position: relative;
+  background-color: #f9f9f9;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-header {
+  margin: 0;
+  padding: 15px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

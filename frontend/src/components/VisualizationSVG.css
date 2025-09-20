@@ -1,0 +1,122 @@
+.visualization-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 400px;
+}
+
+.animation-status {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  background-color: #e8f5e8;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  color: #2e7d32;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.visualization-svg {
+  width: 100%;
+  height: auto;
+  max-width: 800px;
+  max-height: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  display: block;
+}
+
+.visualization-svg:hover {
+  transform: scale(1.02);
+}
+
+.visualization-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  border-radius: 12px;
+  margin: 20px;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.visualization-error h3 {
+  margin: 0 0 8px 0;
+  color: #495057;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.visualization-error p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Animation-specific styles */
+.svg-element {
+  transition: all 0.3s ease;
+}
+
+.svg-element:hover {
+  filter: brightness(1.1);
+}
+
+/* Smooth animations for educational content */
+.educational-element {
+  animation-timing-function: ease-in-out;
+}
+
+/* Orbital motion helpers */
+.orbital-element {
+  transform-origin: center;
+}
+
+/* Text styling for better readability */
+text {
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .visualization-container {
+    padding: 10px;
+  }
+  
+  .visualization-svg {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .visualization-svg {
+    max-width: 300px;
+  }
+  
+  .visualization-error {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .error-icon {
+    font-size: 36px;
+  }
+}
