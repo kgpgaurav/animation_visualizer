@@ -1,126 +1,230 @@
-# Chat-to-Visualization App
+# Animation Visualizer
 
-A system that explains concepts with both text and visualization. Users ask questions, and an LLM generates explanations with accompanying visualizations.
+A modern web application that transforms text-based questions into interactive animated visualizations using AI-powered explanations and SVG animations.
 
-## Features
+## 🎯 Overview
 
-- Text explanations paired with interactive visualizations
-- Real-time streaming of responses via Server-Sent Events (SSE)
-- Playable/pausable visualizations
-- Chat history and visualization selection
-- **NEW: Dark Mode UI** for reduced eye strain and better readability
-- **NEW: JSX syntax** for React components
+The Animation Visualizer is a full-stack application that leverages AI to create educational animations and visual explanations for complex concepts. Users can ask questions in natural language and receive both textual explanations and corresponding animated visualizations.
 
-## Tech Stack
+## 🚀 Features
 
-- **Backend**: Node.js with Express
-- **Frontend**: React with JSX
-- **Realtime**: Server-Sent Events (SSE)
-- **LLM**: Google Gemini 2.5 Flash
-- **Styling**: CSS with dark mode variables
+- **AI-Powered Explanations**: Uses Google's Generative AI to provide detailed explanations
+- **Interactive Animations**: SVG-based animations powered by Anime.js
+- **Real-time Chat Interface**: Seamless conversation flow with the AI
+- **Dark/Light Mode**: User-friendly interface with theme switching
+- **Responsive Design**: Works across different screen sizes
+- **Advanced Animation Controls**: Play, pause, and control animation playback
+- **Particle Systems**: Support for complex particle-based animations
+- **Physics Simulations**: Spring physics and bezier path animations
 
-## Project Structure
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18.2.0** - Modern React with hooks
+- **Anime.js 3.2.2** - Powerful animation library
+- **Axios 1.4.0** - HTTP client for API communication
+- **CSS3** - Custom styling with dark mode support
+
+### Backend
+- **Node.js** - Runtime environment
+- **Express 4.18.2** - Web application framework
+- **Google Generative AI 0.2.1** - AI integration
+- **CORS 2.8.5** - Cross-origin resource sharing
+- **UUID 9.0.0** - Unique identifier generation
+
+## 📁 Project Structure
 
 ```
-task_anim/
-├── backend/             # Express server
-│   ├── server.js        # Main server file
-│   ├── package.json     # Backend dependencies
-│   └── .env             # Environment variables
-│
-└── frontend/            # React application
-    ├── public/          # Static assets
-    ├── src/             # Source code
-    │   ├── components/  # React components
-    │   ├── App.js       # Main application component
-    │   └── index.js     # Entry point
-    └── package.json     # Frontend dependencies
+animation_visualizer/
+├── backend/
+│   ├── package.json
+│   └── server.js
+├── frontend/
+│   ├── public/
+│   │   ├── index.html
+│   │   └── manifest.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── AppTitle.jsx
+│   │   │   ├── ChatPanel.jsx
+│   │   │   ├── Controls.jsx
+│   │   │   ├── QuestionInput.jsx
+│   │   │   ├── VisualizationSVG.jsx
+│   │   │   └── VisualizationSVG.css
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── DarkMode.css
+│   │   └── index.js
+│   ├── archive/
+│   │   ├── examples/
+│   │   └── canvas-variations/
+│   └── package.json
+├── .gitignore
+└── README.md
 ```
 
-## Getting Started
+## 🚀 Getting Started
 
 ### Prerequisites
 
 - Node.js (v14 or higher)
 - npm or yarn
-- Google API key with access to Gemini 2.5 Flash
+- Google AI API key
 
 ### Installation
 
-1. Clone the repository:
-   ```
-   git clone <repository-url>
-   cd task_anim
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/animation_visualizer.git
+   cd animation_visualizer
    ```
 
-2. Set up the backend:
-   ```
+2. **Install backend dependencies**
+   ```bash
    cd backend
    npm install
    ```
-   
-   Create a `.env` file with your Google API key:
-   ```
-   GOOGLE_API_KEY=your_api_key_here
-   PORT=5000
-   ```
 
-3. Set up the frontend:
-   ```
+3. **Install frontend dependencies**
+   ```bash
    cd ../frontend
    npm install
    ```
 
+4. **Environment Setup**
+   
+   Create a `.env` file in the backend directory:
+   ```env
+   GOOGLE_AI_API_KEY=your_google_ai_api_key_here
+   PORT=5000
+   ```
+
 ### Running the Application
 
-1. Start the backend server:
-   ```
+1. **Start the backend server**
+   ```bash
    cd backend
+   npm start
+   # or for development with auto-reload
    npm run dev
    ```
 
-2. In a new terminal, start the frontend:
-   ```
+2. **Start the frontend development server**
+   ```bash
    cd frontend
    npm start
    ```
 
-3. Open your browser and navigate to `http://localhost:3000`
+3. **Access the application**
+   - Frontend: http://localhost:3000
+   - Backend API: http://localhost:5000
 
-## API Endpoints
+## 🎮 Usage
 
-- `POST /api/questions`: Submit a new question
-- `GET /api/questions`: Retrieve all past questions
-- `GET /api/answers/:id`: Get a specific answer with its visualization
-- `GET /api/stream`: Connect to the SSE stream for real-time updates
+1. **Ask a Question**: Type any concept or question you'd like to understand visually
+2. **Get AI Response**: Receive a detailed explanation from the AI
+3. **Watch Animation**: View the corresponding animated visualization
+4. **Control Playback**: Use the controls to play, pause, or restart animations
+5. **Toggle Theme**: Switch between light and dark modes for better viewing
 
-## Visualization JSON Format
+### Example Questions
 
-The LLM generates visualization specifications in JSON format:
+- "How does a spring work?"
+- "Explain the water cycle"
+- "What is gravitational force?"
+- "How do particles move in a gas?"
+- "Demonstrate wave interference"
 
+## 🎨 Animation Features
+
+### Supported Animation Types
+- **Particle Systems**: Complex particle behaviors and interactions
+- **Physics Simulations**: Spring physics, gravity, and forces
+- **Path Animations**: Bezier curves and spline paths
+- **Timeline Animations**: Synchronized multi-element animations
+- **SVG Transformations**: Scalable vector graphics animations
+
+### Animation Controls
+- Play/Pause functionality
+- Animation speed control
+- Reset and replay options
+- Real-time parameter adjustment
+
+## 🔧 Development
+
+### Frontend Development
+```bash
+cd frontend
+npm run build    # Build for production
+npm test        # Run tests
+```
+
+### Backend Development
+```bash
+cd backend
+npm run dev     # Development mode with nodemon
+```
+
+### Available Scripts
+
+#### Frontend
+- `npm start` - Runs the app in development mode
+- `npm run build` - Builds the app for production
+- `npm test` - Launches the test runner
+- `npm run eject` - Ejects from Create React App
+
+#### Backend
+- `npm start` - Starts the production server
+- `npm run dev` - Starts development server with auto-reload
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 API Documentation
+
+### Endpoints
+
+#### POST `/api/chat`
+Send a question and receive AI-generated explanation with visualization data.
+
+**Request Body:**
 ```json
 {
-  "duration": 5000,
-  "fps": 30,
-  "layers": [
-    {
-      "id": "layer1",
-      "type": "circle",
-      "props": { "x": 100, "y": 200, "r": 20, "fill": "#3498db" },
-      "animations": [
-        { "property": "x", "from": 100, "to": 400, "start": 0, "end": 3000 }
-      ]
-    }
-  ]
+  "question": "How does a pendulum work?",
+  "userId": "user123"
 }
 ```
 
-Supported shape types:
-- circle
-- rect
-- text
-- arrow
+**Response:**
+```json
+{
+  "response": "A pendulum works by...",
+  "visualization": {
+    "type": "pendulum",
+    "elements": [...],
+    "animations": [...]
+  }
+}
+```
 
-Animation properties can include:
-- Standard properties (x, y, width, height, etc.)
-- Special animations like "orbit" and "rotation"
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **API Key Issues**: Ensure your Google AI API key is correctly set in the `.env` file
+2. **Port Conflicts**: Change the port in the backend if 5000 is already in use
+3. **CORS Errors**: Make sure the backend CORS configuration includes your frontend URL
+4. **Animation Performance**: For complex animations, consider reducing particle count
+
+
+
+## 🙏 Acknowledgments
+
+- Google Generative AI for powerful language processing
+- Anime.js for smooth and performant animations
+- React community for excellent documentation and resources
